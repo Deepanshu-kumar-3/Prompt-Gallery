@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Admin email configuration
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == "dkumar.iit.b.2026@gmail.com";
+    }
+
+    match /prompts/{promptId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+      
+      // Allow any authenticated user to increment views/likes/downloads
+      allow update: if request.auth != null && 
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['views', 'likes', 'downloads']);
+    }
+
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "projectId": "premium-prompt-gallery",
+  "appId": "1:783286308472:web:3ae730cfdaddc1f7c2a78d",
+  "apiKey": "AIzaSyAvY88iEf_x6gV7UuAQZe-KjMH-aXcT4bA",
+  "authDomain": "premium-prompt-gallery.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "premium-prompt-gallery.firebasestorage.app",
+  "messagingSenderId": "783286308472",
+  "measurementId": ""
+}
